@@ -3,10 +3,6 @@
 
 
 
-# Questions about Problems and Recipes
-
-
-
 [Course Structure Quiz, Problem 1]
 * Question (ckong9-stat697): Is it possible to have online office hours other than Saturdays?
 
