@@ -32,8 +32,6 @@
 
 ***
 
-
-
 # Recipes Exploration Results
 
 
@@ -57,8 +55,6 @@ run;
 
 ```
 
-
-
 ```Python
 
 [Python_recipe-fizz-buzz]
@@ -71,7 +67,6 @@ for i in range(1,101):
 [Python_recipe-fizz-buzz Question]
 * Question (bbasulto-stat697): Why do we set the range in the Python recipe to be (1,101) instead of (1, 100) like the SAS recipe?
 - Answer (bbasulto-stat697): Because the range in Python is exclusive, unlike SAS which is inclusive. 
-
 
 
 
