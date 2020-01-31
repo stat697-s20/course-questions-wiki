@@ -181,6 +181,11 @@ Notes:
 
 
 **Python Kernel**
+
+```Python
+
+
+
 ###############################################################################;
 # Python Recipe: summarize-data-using-pandas ;
 ###############################################################################;
@@ -230,3 +235,7 @@ print(iris.groupby('species')['sepal_length'].agg(['min', 'median', 'max']))
 #
 #
 # (6) Finally, if you're new to Python, the following gives a great overview of built-in data structures, with the entire (incredibly short) book recommended as a comprehensive overview of Python notation and language conventions: https://jakevdp.github.io/WhirlwindTourOfPython/06-built-in-data-structures.html
+
+
+
+```
