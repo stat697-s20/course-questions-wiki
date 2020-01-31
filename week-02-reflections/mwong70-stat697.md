@@ -2,31 +2,43 @@
 # Questions about Problems and Recipes
 
 
+
+[Course Structure Quiz, Problem 1]
 * Question (mwong70-stat697): What skills can a statistician acquire by studying a Structured Query Language?
 
 &dash; Answer (mwong70-stat697): To access, explore, prepare, analyze, and report data, and export results.
 
 
+
+[Course Structure Quiz, Problem 2]
 * Question (mwong70-stat697): Name the 3 types of SAS tools, and list 1 difference about them.
 
 &dash; Answer (mwong70-stat697): SAS Windowing Environment, SAS Studio, and SAS Enterprise Guide. SAS Studio and SAS Enterprise Guide include features such as code completion, formatting, and syntax coloring that make programming much easier!
 
 
+
+[Course Structure Quiz, Problem 3]
 * Question (mwong70-stat697): How many hours did you spend on this week's reading assignments, so far? What is one takeaway?
 
 &dash; Answer (mwong70-stat697): Between 1-4 hours per day. The publication year of the book {2011, 2014, 2017} did not matter.  
 
 
+
+[Course Structure Quiz, Problem 4]
 * Question (mwong70-stat697): In JupyterLab, locate the indicator that shows how many character-length your window is.
 
 &dash; Answer (mwong70-stat697):  
 
 
+
+[Course Structure Quiz, Problem 5]
 * Question (mwong70-stat697): Jargons specific to SAS.
 
 &dash; Answer (mwong70-stat697): variables = column, clause = command
 
 
+
+[Course Structure Quiz, Problem 6]
 * Question (mwong70-stat697): What follows after a `WHERE` block? Is it numeric or character? 
 
 &dash; Answer (mwong70-stat697): 
@@ -36,9 +48,25 @@
 3. <column> `LIKE` <character> ; character
 
 
+
+[Course Structure Quiz, Problem 7]
+* Question (mwong70-stat697): What is the difference between African and European pigeons? 
+
+&dash; Answer (mwong70-stat697): 
+
+
+
+[summarizing-data Week 2 SAS Recipe]
 * Question (mwong70-stat697): How do you box-highlight in SAS?
 
 &dash; Answer (mwong70-stat697): oh no.. I forgot, but I wrote it down somewhere in my notes.
+
+
+
+[summarizing-data Week 2 PY Recipe]
+* Question (mwong70-stat697): Name one difference between python and SAS.
+
+&dash; Answer (mwong70-stat697): Python commands use periods `.` to join functions. SAS uses space.
 
 
 ***
