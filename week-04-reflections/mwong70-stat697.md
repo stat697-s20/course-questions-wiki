@@ -47,13 +47,13 @@
 
 [grain Week 4 SAS Recipe]
 * Question (mwong70-stat697): What is grain?
-- Grain is level of aggregation before joining with finer data.
+- Answer (mwong70-stat697): Grain is level of aggregation before joining with finer data.
 
 
 
 [grain Week 4 SAS Recipe]
 * Question (mwong70-stat697): Why do we use the coalesce function?
-- Coalesce function ensures to list all uniqueID after joining data, but it skips the missing data.
+- Answer (mwong70-stat697): Coalesce function ensures to list all uniqueID after joining data, but it skips the missing data.
 
 
 
