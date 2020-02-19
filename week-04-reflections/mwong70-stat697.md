@@ -3,58 +3,55 @@
 
 
 
-[Course Structure Quiz, Problem 1]
+[SS1 Ls. 5, Problem 1]
 * Question (mwong70-stat697): Which functions were used in this session?
 - Answer (mwong70-stat697): coalesce, join, distinct
 
 
 
-[Course Structure Quiz, Problem 2]
+[SS1 Ls. 5, Problem 2]
 * Question (mwong70-stat697): What research question do we want ot answer in this lesson? 
 - Answer (mwong70-stat697): We want to know how to join tables and deal with duplicates.
 
 
 
-[Course Structure Quiz, Problem 3]
+[SS1 Ls. 5, Problem 3]
 * Question (mwong70-stat697): What information can we gather by combining data at different grains? 
 - Answer (mwong70-stat697): How many tables or aliases, and the number of columns that we joined.
 
 
 
-[Course Structure Quiz, Problem 4]
+[SS1 Ls. 5, Problem 4]
 * Question (mwong70-stat697): How does SAS deal with missing data in coalesce function?
 - Answer (mwong70-stat697): Coalesce function will skip the missing data.
 
 
 
-[Course Structure Quiz, Problem 5]
+[SS1 Ls. 5, Problem 5]
 * Question (mwong70-stat697): How do we remove duplicates?
 - Answer (mwong70-stat697): The distinct function is used to remove duplicated uniqueID.
 
 
 
-[Course Structure Quiz, Problem 6]
+[SS1 Ls. 5, Problem 6]
 * Question (mwong70-stat697): Can we inner join binary numbers and logical TRUE/FALSE in the same column?
-- Answer (mwong70-stat697): 
 
 
 
-[Course Structure Quiz, Problem 7]
+[SS1 Ls. 5, Problem 7]
 * Question (mwong70-stat697): What's the difference between outer and inner join?
-- Answer (mwong70-stat697): 
 
 
 
-[grain Week 4 SAS Recipe]
+[Combine Data at Different Grains Week 4 SAS Recipe]
 * Question (mwong70-stat697): What is grain?
 - Answer (mwong70-stat697): Grain is level of aggregation before joining with finer data.
 
 
 
-[grain Week 4 SAS Recipe]
+[Combine Data at Different Grains Week 4 SAS Recipe]
 * Question (mwong70-stat697): Why do we use the coalesce function?
 - Answer (mwong70-stat697): Coalesce function ensures to list all uniqueID after joining data, but it skips the missing data.
-
 
 
 
@@ -67,7 +64,7 @@
 
 
 ```SAS
-*Recipe: grain.sas
+*Recipe: sas_recipe-combine-data-at-different-grains.sas
 
 filename work_dir "%sysfunc(getoption(work))/us_data.sas7bdat";
 proc http
@@ -109,7 +106,7 @@ quit;
 
 
 ```Python
-# Recipe: grain.py
+# Recipe: python_recipe-combine-data-at-different-grains.py
 
 import pandas
 import saspy
@@ -126,7 +123,6 @@ us_data_w_zipcode_subset_df = us_data_w_zipcode_df[['STATENAME','REGION','number
 us_data_w_zipcode_sorted_df = us_data_w_zipcode_subset_df.sort_values(by='number_of_zipcodes', ascending=False)
 
 print(us_data_w_zipcode_sorted_df)
-
 
 
 
