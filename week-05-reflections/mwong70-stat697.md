@@ -22,8 +22,7 @@
 
 ```SAS
 /* Approach: Use DDL and DML SQL queries.
-
-DDL Recipes:
+DDL Recipes: */
 /* DDL example: define column information for a table; */
 proc sql;
     create table Work.tmp as
@@ -83,7 +82,7 @@ quit;
 /* DML example: create rows of data in a table using a select query; */
 proc sql;
     insert into Work.iris
-        select * /* from here, the formatting follows the previous examples */
+        select * 
             from sashelp.iris
     ;
 quit;
@@ -97,13 +96,77 @@ proc sql;
 quit;
 
 /* DML example: create rows of data in a table using value statement, giving 
-tuples of values for specified columns, with values in all other columns set to
+tuples of values for specified columns, with values in all other columns set to 
 missing for the new rows being created; */
 proc sql;
     insert into Work.iris
         (Species,SepalLength)
+        values('Big Flower',75)
     ;
+quit;
 
+/* DML example: update rows of data in a table; */
+proc sql;
+    update Work.iris
+        set Species='Big Flower'
+        where SepalLength > 64
+    ;
+quit;
+
+/* DML example: delete rows of data in a table; */
+proc sql;
+    delete from Work.iris
+        where Species='Big Flower'
+    ;
+quit;
+
+
+/*
+Notes:
+(1) These examples illustrate the eight main queries available in proc sql, 
+along with their possible variations. These are also the 8 main queries defined 
+in most SQL-based relational database management systems (RDBMSes).
+
+
+(2) The first four queries (create-table, describe-table, alter-table, and 
+drop-table) are used as so-called data-definition language (DDL), meaning they 
+define, obtain, or modify column information in a table, or delete a table 
+entirely.
+
+
+(3) The output of a describe-table query is sometimes called the 
+"DDL for the table" since it's what would be put into a create-table query to 
+create a new table with the same column properties but no rows of data.
+
+
+(4) However, note that when specifying the column type in a create-table query, 
+SAS only supports character columns and numeric columns, even through most 
+RDBMSes allow for many other possible column types in order to allow the size of 
+data on disk to be minimized as much as possible (e.g., a list for MySQL is 
+available at https://dev.mysql.com/doc/refman/8.0/en/data-types.html). This is 
+because Base SAS only supports character and numeric types; e.g., even date and 
+time values are really just numeric values with formatting applied to them.
+
+
+(5) On the other hand, the last four queries (select, insert-into, update, and 
+delete-from) are used as so-called data-manipulation language (DML), meaning 
+they obtain, create, modify, or delete the rows of data in a table.
+
+
+(6) Together, these eight queries are the basic toolkit for database 
+administration, and it's not uncommon for database-maintenance records to be 
+given as a sequence of queries since the code itself specifies exact steps with 
+more precision and fewer characters that a paragraph of text.
+
+
+(7) In addition, it's also common for data to be distributed as text files with 
+the extension .sql and with file contents consisting of one or more create-table 
+queries followed by many insert-into queries with values statements used to 
+create tables row-by-row. Such files are typically larger in size than CSV 
+files, but they also remove any ambiguity about the data types for columns, 
+allowing a table of data from one RDBMS to be exactly moved or copied to another 
+RDBMS.
+*/
 
 ```
 
