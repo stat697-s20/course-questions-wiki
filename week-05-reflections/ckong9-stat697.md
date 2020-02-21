@@ -55,7 +55,7 @@
 
 
 [DDL and DML SQL Queries Week 5 Python Recipe]
-* Question (ckong9-stat697): How can we modify the values in some rows?
+* Question (ckong9-stat697): Using Python, how can we modify the values in some rows?
 
 
 
