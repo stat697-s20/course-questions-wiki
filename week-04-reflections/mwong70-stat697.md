@@ -114,7 +114,7 @@ sas = saspy.SASsession(results='TEXT')
 
 us_data_df = pandas.read_sas('https://tinyurl.com/sashelp-us-data', format='sas7bdat', encoding='latin-1')
 
-zipcode_df = sas.sasdata2dataframe(table='zipcode', libredf='sashelp')
+zipcode_df = sas.sasdata2dataframe(table='zipcode', libref='sashelp')
 zipcode_agg_by_statename = zipcode_df.groupby('STATENAME').size()
 zipcode_agg_by_statename_df = zipcode_agg_by_statename.to_frame('number_of_zipcodes').reset_index()
 
