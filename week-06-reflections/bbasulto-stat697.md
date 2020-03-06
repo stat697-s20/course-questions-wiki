@@ -102,10 +102,70 @@ run;
 
 
 ```Python
+import pandas
+import saspy
+sas = saspy.SASsession(results='TEXT')
+iris = sas.sasdata2dataframe(table='iris', libref='sashelp')
 
+# DDL example: define column information;
+tmp = pandas.DataFrame(
+     {
+         'column1':str(),
+         'column2':int()
+     },
+     index=[]
+)
 
-[place your Python recipe explorations here, and delete this line]
+# DDL example: obtain column information;
+print(tmp.dtypes)
+print() #print an extra blank line
 
+# DDL example: add column;
+tmp['column3'] = pandas.Series({'column3':str()}, index=[])
 
+# DDL example: modify column;
+#There is no Python equivaqlent
+
+# DDL example: delete column;
+del tmp['column2']
+
+# DDL example: delete table;
+del tmp
+
+# DML example setup: define column information;
+iris_clone = pandas.DataFrame()
+for (column_name, column_type) in iris.dtypes.iteritems():
+    iris_clone[column_name] = pandas.Series(name=column_name, dtype=column_type)
+
+# DML example: obtain rows of data;
+print(iris_clone)
+
+# DML example: create rows of data from select query;
+iris_clone = iris_clone.append(iris.copy())
+
+# DML example: create row of data using values statement for all columns;
+iris_clone = iris_clone.append(
+    pandas.Series(['Big Flower',75,80,85,90], index=iris_clone.columns),
+    ignore_index=True
+)
+
+# DML example: create row of data using values statement for select columns;
+iris_clone = iris_clone.append(
+    {
+        'Species':'Big Flower',
+        'SepalLength':75
+    },
+    ignore_index=True
+)
+
+# DML example: update rows of data;
+iris_clone.loc[iris_clone['SepalLength'] > 64,'Species'] = 'Big Flower'
+
+# DML example: delete rows of data;
+
+iris_clone = iris_clone.loc[iris_clone['Species'] != 'Big Flower'].reset_index(drop=True)
 
 ```
+[Python_recipe Question]
+* Question (bbasulto-stat697): When we use the ignor_index=True, are we just renumbering the index that was set or created in the beginning to accomodate the new data?
+- Answer (bbasulto-stat697):
